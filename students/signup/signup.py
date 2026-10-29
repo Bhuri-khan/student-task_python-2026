@@ -1,6 +1,9 @@
 import json
 import datetime
+import uuid
 
+
+uid_data=str(uuid.uuid4())[:4]
 with open("students/data/task.json","r") as file:
     data=json.load(file)
 
@@ -111,6 +114,7 @@ def signup():
         
         date_time=datetime.datetime.now()
         dictionary={
+            "uid":uid_data,
             "name":name,
             "age":age,
             "qualification":qualification,
